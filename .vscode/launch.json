@@ -11,6 +11,17 @@
             "program": "${workspaceFolder}/Chatbot/movies.py",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.envrc",
-        }
+        },
+        {
+            "name": "Python Debugger: openapi2tools",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/openapi2tools/tool.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${workspaceFolder}/MockServer/openapi.json",
+                "${workspaceFolder}/output/moviesApi.py"
+            ]
+        },
     ]
 }
