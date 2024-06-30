@@ -10,7 +10,7 @@ Convert an OpenAPI spec to LangGraph tools 🪄
 
 Companies worldwide have invested billions 💰💰💰 into developing APIs. In the new AI era, a question begs, how to leverage the power of natural language processing while preserving existing investments.
 
-**openapi2tools** tries to solve the above challenge by converting an OpenAPI spec json into a domain specific Agent.
+**openapi2tools** tries to solve the above challenge by converting an OpenAPI spec json into a domain knowledge specific LangGraph Agent.
 
 
 ## Installation and Usage
