@@ -11,7 +11,7 @@ import os
 import moviesApi
 
 
-os.environ['LANGCHAIN_TRACING_V2'] = 'true'
+os.environ['LANGCHAIN_TRACING_V2'] = 'false'
 os.environ['LANGCHAIN_API_KEY'] = 'YOUR_LANGCHAIN_API_KEY'
 if 'OPENAI_API_KEY' not in os.environ:
     os.environ['OPENAI_API_KEY'] = 'YOUR_OPENAI_API_KEY'
