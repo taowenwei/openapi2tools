@@ -59,6 +59,7 @@ prompt = ChatPromptTemplate.from_messages([
         def `api.operationId` (`api.parameter list`) -> `api.response(HTTP 200)':
             `api.summary` as tool description
         
-            response = requests.get(`api.path`)
-            errorHandling from the listOf(`api.responses`)
+            response = requests call with `api.method` (`api.path`, `api.query`,`api.requestBody`)
+            error handling from the listOf(`api.responses`)
+'''
 ```
