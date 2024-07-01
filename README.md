@@ -18,8 +18,13 @@ Companies worldwide have invested billions 💰💰💰 into developing APIs. In
 
 ## Installation and Usage
 
-With pip
+With pip,
 
 ```bash
 pip install openapi2tools
+```
+
+Usage,
+```bash
+openapi2tools <your_openapi_json_file> <output_python_file_name>
 ```

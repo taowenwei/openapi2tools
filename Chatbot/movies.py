@@ -5,9 +5,16 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph.message import AnyMessage, add_messages
 from typing import Annotated
 from typing_extensions import TypedDict
+import os
 
 # the agent, generated from an OpenAPI json file
 import moviesApi
+
+
+os.environ['LANGCHAIN_TRACING_V2'] = 'true'
+os.environ['LANGCHAIN_API_KEY'] = 'YOUR_LANGCHAIN_API_KEY'
+if 'OPENAI_API_KEY' not in os.environ:
+    os.environ['OPENAI_API_KEY'] = 'YOUR_OPENAI_API_KEY'
 
 
 class State(TypedDict):
@@ -38,13 +45,13 @@ while True:
         break
 
     events = graph.stream(
-        {"messages": [("user", user_input)]}, config, stream_mode="values")
+        {'messages': [('user', user_input)]}, config, stream_mode='values')
     for event in events:
-        if "messages" in event:
-            event["messages"][-1].pretty_print()
+        if 'messages' in event:
+            event['messages'][-1].pretty_print()
 
 # Example questions:
 # user_input = 'get all the movies released on 2008'
 # user_input = 'retrieve all the movie release years'
 # user_input = 'get the movie with id=2'
-# user_input = 'create a new movie with title="Despicable Me 4", year=2024'
+# user_input = 'create a new movie with title='Despicable Me 4', year=2024'
