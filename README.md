@@ -52,14 +52,15 @@ prompt = ChatPromptTemplate.from_messages([
 ```
 + a list of tools
 ```python
-''' forEach api in openapi.json:
-        generate a tool in the following format,
+# for each api in openapi.json, 
+# generate a tool in the following format,
     
-        @tool
-        def `api.operationId` (`api.parameter list`) -> `api.response(HTTP 200)':
-            `api.summary` as tool description
-        
-            response = requests call with `api.method` (`api.path`, `api.query`,`api.requestBody`)
-            error handling from the listOf(`api.responses`)
+'''
+@tool
+def `api.operationId` (`api.parameter list`) -> `api.response(HTTP 200)':
+    `api.summary` as tool description
+
+    response = requests call with `api.method` (`api.path`, `api.query`,`api.requestBody`)
+    error handling from the listOf(`api.responses`)
 '''
 ```
