@@ -41,13 +41,24 @@ The [Chatbot folder](./Chatbot/README.md) contains an example implementation of 
 prompt = ChatPromptTemplate.from_messages([
     ('system', 
         '''
-        generate an overview from openapi.json's `info.description`
+        generate an overview from the `info.description`
 
         forEach api in openapi.json:
-            generate a tool capability from api's `operationId` and `summary`
+            generate a tool capability from `api.operationId` and `api.summary`
         '''
         ),
     ('placeholder', "{messages}")
 ])
-
+```
++ a list of tools
+```python
+''' forEach api in openapi.json:
+        generate a tool in the following format,
+    
+        @tool
+        def `api.operationId` (`api.parameter list`) -> `api.response(HTTP 200)':
+            `api.summary` as tool description
+        
+            response = requests.get(`api.path`)
+            errorHandling from the listOf(`api.responses`)
 ```
