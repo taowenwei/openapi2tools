@@ -82,3 +82,10 @@ def __call__(self, state, config: RunnableConfig):
     result = self.runnable.invoke(state)
     return {'messages': result}
 ```
+
+## Known Issues
++ Supporting more authentication methods - currently only bearer token is implemented [here](https://github.com/taowenwei/openapi2tools/blob/86c8b58deeb645717e61c631db00c5210f5d5e67/Chatbot/moviesApi.py#L15).
++ Not sure how to support a HTTP body with arrays or embedded objects - currently expect a *flat* body schema.
+
+## Contribution
+This is an ongoing project, your contributions are extremely appreciated. Please create a Pull Request. 🍻🍻
