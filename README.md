@@ -47,7 +47,7 @@ prompt = ChatPromptTemplate.from_messages([
             generate a tool capability from `api.operationId` and `api.summary`
         '''
         ),
-    ('placeholder', "{messages}")
+    ('placeholder', '{messages}')
 ])
 ```
 + a list of tools
