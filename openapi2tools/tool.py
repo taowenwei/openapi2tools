@@ -185,7 +185,7 @@ class {clzName}:
             
             Now answer your question'''
         ),
-        ("placeholder", "{{messages}}"),
+        ('placeholder', '{{messages}}'),
     ])
 
     {genTools(4, clzName, paths, components)}
