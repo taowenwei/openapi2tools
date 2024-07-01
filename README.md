@@ -60,7 +60,25 @@ prompt = ChatPromptTemplate.from_messages([
 def `api.operationId` (`api.parameter list`) -> `api.response(HTTP 200)':
     `api.summary` as tool description
 
-    response = requests call with `api.method` (`api.path`, `api.query`,`api.requestBody`)
+    response = requests call with `api.method` (`api.path`, `api.query`, `api.requestBody`)
     error handling from the listOf(`api.responses`)
+
+...
+tools = [
+    the api.operationId list
+]
 '''
+```
++ a class constructor to bind the prompt with a llm
+```python
+def __init__(self, llm):
+    self.runnable = MoviesApi.prompt | llm.bind_tools(MoviesApi.tools)
+
+```
++ an invoker to process a tool call
+```python
+def __call__(self, state, config: RunnableConfig):
+    ...
+    result = self.runnable.invoke(state)
+    return {'messages': result}
 ```
