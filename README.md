@@ -8,7 +8,7 @@ Convert an OpenAPI spec to LangGraph tools 🪄
 ## Concepts
 1. [LangChain](https://python.langchain.com/v0.2/docs/introduction/) is a framework for developing apps powered by large language models (LLMs).
 2. [LangGraph](https://langchain-ai.github.io/langgraph/), introduced by 
-`LangChain` starting from v0.2, facilitates building [Agent](https://python.langchain.com/v0.2/docs/tutorials/agents/)-based apps that leverage and extend a LLM to perform tasks outside of its traditional domain. The heart of an agent is [Tool calls](https://python.langchain.com/v0.2/docs/how_to/tool_calling/#tool-calls).
+`LangChain` starting from v0.2, facilitates building [Agent](https://python.langchain.com/v0.2/docs/tutorials/agents/)-based apps that leverage and extend an LLM to perform tasks outside of its traditional domain. The heart of an agent is [Tool calls](https://python.langchain.com/v0.2/docs/how_to/tool_calling/#tool-calls).
 3. [OpenAPI ](https://learn.openapis.org/introduction.html) Specification (OAS) is a standard format for defining APIs, allowing both humans and machines to understand the capabilities of a service without accessing its source code, documentation, or network traffic.
 
 Companies worldwide have invested billions 💰💰💰 into developing APIs. In the new AI era, a question begs, how to leverage the power of natural language processing to consume the APIs while minimizing costs and maximizing existing investments.
@@ -18,12 +18,16 @@ Companies worldwide have invested billions 💰💰💰 into developing APIs. In
 
 ## Installation and Usage
 
-**openapi2tools** can be installed with pip,
+The full source code for the **openapi2tools** tool can be found at [here](./openapi2tools/tool.py).
+
+It also can be installed with pip,
 
 ```bash
 pip install openapi2tools
 ```
+
 After installation, you run the tool in a command line to generate an agent source file from a OpenAPI JSON ([example json](./MockServer/openapi.json))
+
 ```bash
 openapi2tools <your_openapi_json_file> <output_python_file_name>
 ```
@@ -69,7 +73,7 @@ tools = [
 ]
 '''
 ```
-+ a class constructor to bind the prompt with a llm
++ a class constructor to bind the prompt with an llm
 ```python
 def __init__(self, llm):
     self.runnable = MoviesApi.prompt | llm.bind_tools(MoviesApi.tools)
@@ -84,6 +88,7 @@ def __call__(self, state, config: RunnableConfig):
 ```
 
 ## Known Issues
++ Support REST API only
 + Supporting more authentication methods - currently only bearer token is implemented [here](https://github.com/taowenwei/openapi2tools/blob/86c8b58deeb645717e61c631db00c5210f5d5e67/Chatbot/moviesApi.py#L15).
 + Not sure how to support a HTTP body with arrays or embedded objects - currently expect a *flat* body schema.
 
