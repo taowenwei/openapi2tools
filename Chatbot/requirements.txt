@@ -1,0 +1,8 @@
+pydantic==2.3.0
+langchain==0.2.6
+openai==1.34.0
+langchain-openai==0.1.8
+langchain-community==0.2.5
+langgraph==0.0.69
+langsmith==0.1.77
+typing_extensions==4.12.2
