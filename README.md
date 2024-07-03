@@ -32,6 +32,12 @@ After installation, you run the tool in a command line to generate an agent sour
 openapi2tools <your_openapi_json_file> <output_python_file_name>
 ```
 
+## Quick Demo
+In the screen recoding below, a user talked to a chatbot using natural language. (The left side of the screen is the output of the mock service.)
+
+[![screen recording](https://i9.ytimg.com/vi/75EUUGFNqJY/mqdefault.jpg?sqp=CKy4lrQG-oaymwEmCMACELQB8quKqQMa8AEB-AHOCIAC0AWKAgwIABABGGcgZyhnMA8=&rs=AOn4CLDyHqz2JtODJ8LJwgLHot_5ZMDLgQ)](https://youtu.be/75EUUGFNqJY)
+
+
 ## Anatomy of an Agent for a Chatbot
 
 The [MockServer folder](./MockServer/README.md) implements a REST API based service and provides an OpenAPI JSON ([openapi.json](./MockServer/openapi.json)). **openapi2tools** is supposed to run against the `openapi.json` to generate a fully encapsulated Agent ([moviesApi.py](./Chatbot/moviesApi.py)).
