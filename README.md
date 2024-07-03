@@ -3,6 +3,8 @@
 [![Release Notes](https://img.shields.io/github/release/langchain-ai/langchain?style=flat-square)](https://github.com/langchain-ai/langchain/releases)
 [![PyPI - License](https://img.shields.io/pypi/l/langchain-core?style=flat-square)](https://opensource.org/licenses/MIT)
 
+Got APIs? Wanna make it work with large language models? 
+
 Convert an OpenAPI spec to LangGraph tools 🪄
 
 ## Concepts
